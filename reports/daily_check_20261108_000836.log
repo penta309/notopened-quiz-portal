@@ -1,0 +1,29 @@
+=== notopened AI ENTERPRISE Daily Automated Inspection ===
+Execution ID : CHK-20261108-000836
+Execution Time: 2026-11-08 00:08:36 KST
+Environment   : Headless Chromium (Linux x86_64) / Python 3.11
+===========================================================
+[PASS] Syntax check: test_quiz_logic.py
+[PASS] Syntax check: test_browser_flow.py
+[PASS] Syntax check: test_schema.py
+[PASS] Syntax check: haru_sync.py
+[PASS] 6/6 Unit tests passed (0.04s)
+[PASS] 3/3 Haru samples schema validated (0.02s)
+[FAIL] Browser E2E test failure: Traceback (most recent call last):
+  File "/working_dir/c_7159b6053ac1a0d0/v121_src/quiz_portal/tests/test_browser_flow.py", line 239, in <module>
+    success = run_tests()
+              ^^^^^^^^^^^
+  File "/working_dir/c_7159b6053ac1a0d0/v121_src/quiz_portal/tests/test_browser_flow.py", line 57, in run_tests
+    server = start_server(PORT)
+             ^^^^^^^^^^^^^^^^^^
+  File "/working_dir/c_7159b6053ac1a0d0/v121_src/quiz_portal/tests/test_browser_flow.py", line 30, in start_server
+    httpd = socketserver.TCPServer(('127.0.0.1', port), QuietServer)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.11/socketserver.py", line 472, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+===========================================================
+Inspection Summary: Total 36 | Passed 13 | Failed 23 | Pass Rate 36.1%
+Automation Status : LOCAL_VERIFIED (Cron/Actions DISCONNECTED due to sandbox network policy)

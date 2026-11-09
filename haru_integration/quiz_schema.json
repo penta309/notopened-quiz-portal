@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "notopened Unified Quiz & Shorts Content Schema",
+  "description": "Standard schema for dual-use content: Web Quiz Interactive Portal and Haru's YouTube Shorts Generation Pipeline.",
+  "type": "object",
+  "required": [
+    "id",
+    "format_type",
+    "topic",
+    "quiz_web_data",
+    "shorts_script_data",
+    "fact_check"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^QUIZ-[0-9]{8}-[0-9]{3}$",
+      "description": "Unique identifier, format: QUIZ-YYYYMMDD-XXX"
+    },
+    "format_type": {
+      "type": "string",
+      "enum": [
+        "OX_QUIZ",
+        "BOX_2D_PHYSICS",
+        "HISTORY_TRIVIA",
+        "ZOOM_PHOTO",
+        "LOCATION_GUESS"
+      ],
+      "description": "One of Haru's 5 core Shorts formats"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Topic or category name (e.g. 항공/과학, 물리/생활, 조선역사)"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["EASY", "MEDIUM", "HARD"]
+    },
+    "quiz_web_data": {
+      "type": "object",
+      "required": ["question", "options", "answer_index", "explanation"],
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Clean, punchy question text for web quiz portal"
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": { "type": "string" },
+          "description": "List of options for user selection"
+        },
+        "answer_index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "0-based index of correct option"
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 15,
+          "description": "Clear educational explanation of why the answer is correct"
+        }
+      }
+    },
+    "shorts_script_data": {
+      "type": "object",
+      "required": [
+        "target_duration_sec",
+        "hook_opening_3s",
+        "question_scene_10s",
+        "countdown_scene_5s",
+        "answer_reveal_15s",
+        "closing_cta_5s"
+      ],
+      "properties": {
+        "target_duration_sec": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 50,
+          "description": "Target shorts video runtime in seconds"
+        },
+        "hook_opening_3s": {
+          "type": "string",
+          "description": "Immediate hook voiceover and screen headline for first 3 seconds"
+        },
+        "question_scene_10s": {
+          "type": "string",
+          "description": "Voiceover TTS text and visual description presenting the quiz"
+        },
+        "countdown_scene_5s": {
+          "type": "string",
+          "description": "Timer tick sound and tension cue (5 seconds)"
+        },
+        "answer_reveal_15s": {
+          "type": "string",
+          "description": "Answer reveal and core punchline explanation"
+        },
+        "closing_cta_5s": {
+          "type": "string",
+          "description": "Call to action directing viewers to pinned comment web quiz and mobile game"
+        }
+      }
+    },
+    "fact_check": {
+      "type": "object",
+      "required": [
+        "verification_status",
+        "primary_source_name",
+        "verification_basis",
+        "verified_by",
+        "verification_date"
+      ],
+      "properties": {
+        "verification_status": {
+          "type": "string",
+          "enum": ["VERIFIED", "PENDING", "REJECTED"]
+        },
+        "primary_source_name": {
+          "type": "string",
+          "description": "Authoritative institution or peer-reviewed/official encyclopedia source"
+        },
+        "verification_basis": {
+          "type": "string",
+          "description": "Specific scientific, legal, or historical citation proving factual accuracy"
+        },
+        "verified_by": {
+          "type": "string",
+          "description": "Role/Agent that verified the fact (e.g. CBDO 카이)"
+        },
+        "verification_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

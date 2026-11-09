@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="notopened AI ENTERPRISE 1일 1상식 30초 두뇌 퀴즈 포털 - 유튜브 숏폼 연동 스낵 콘텐츠">
+  <meta name="keywords" content="상식퀴즈, 1일 1상식, 30초 두뇌퀴즈, 스낵퀴즈, notopened">
+  <meta name="author" content="notopened AI ENTERPRISE (CBDO 카이 & 수석엔지니어 테오)">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="notopened 1일 1상식 두뇌 퀴즈 포털 (v1.1.0 RC)">
+  <meta property="og:description" content="하루(Haru)의 쇼츠 연동 30초 상식 퀴즈! 내 상식 지수와 두뇌 등급을 측정해보세요.">
+  <meta property="og:site_name" content="notopened AI ENTERPRISE">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="notopened 1일 1상식 두뇌 퀴즈 포털">
+  <meta name="twitter:description" content="과학, 역사, 지리 등 일상 속 흥미진진한 상식 5문항 퀴즈">
+
+  <title>notopened 상식 두뇌 퀴즈 포털 (v1.1.0 RC)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧠</text></svg>">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Schema.org Structured Data (Quiz/Educational Rich Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "notopened 1일 1상식 두뇌 퀴즈",
+    "description": "과학, 역사, 지리 등 일상 속 흥미진진한 상식 5문항 퀴즈",
+    "educationalLevel": "Beginner",
+    "about": {
+      "@type": "Thing",
+      "name": "General Knowledge & Science"
+    },
+    "hasPart": [
+      {
+        "@type": "Question",
+        "name": "비행기 창문 블리드 홀 기압 조절 원리",
+        "text": "비행기 객실 창문 아래쪽에 뚫려 있는 아주 작은 구멍은 창문이 깨졌을 때 바로 추락하는 것을 방지하기 위한 기압 조절용이다?",
+        "suggestedAnswer": [
+          { "@type": "Answer", "text": "O (그렇다)", "position": 0 },
+          { "@type": "Answer", "text": "X (아니다)", "position": 1 }
+        ],
+        "acceptedAnswer": { "@type": "Answer", "text": "O (그렇다)", "position": 0 }
+      },
+      {
+        "@type": "Question",
+        "name": "얼음과 물의 밀도 및 질량 비교",
+        "text": "동일한 부피(1L)를 기준으로 비교했을 때, 얼음과 물 중 질량이 더 무거운 것은 무엇일까요?",
+        "suggestedAnswer": [
+          { "@type": "Answer", "text": "얼음", "position": 0 },
+          { "@type": "Answer", "text": "물", "position": 1 },
+          { "@type": "Answer", "text": "둘 다 똑같다", "position": 2 },
+          { "@type": "Answer", "text": "온도에 따라 항상 바뀐다", "position": 3 }
+        ],
+        "acceptedAnswer": { "@type": "Answer", "text": "물", "position": 1 }
+      },
+      {
+        "@type": "Question",
+        "name": "조선왕조실록 사관의 사초 국왕 열람 불가 원칙",
+        "text": "조선시대 왕들의 일거수일투족을 기록했던 사관들의 사초(史草)는 국왕이라도 절대 열람할 수 없었다?",
+        "suggestedAnswer": [
+          { "@type": "Answer", "text": "O (국왕도 볼 수 없었다)", "position": 0 },
+          { "@type": "Answer", "text": "X (국왕은 언제든 열람 가능했다)", "position": 1 }
+        ],
+        "acceptedAnswer": { "@type": "Answer", "text": "O (국왕도 볼 수 없었다)", "position": 0 }
+      },
+      {
+        "@type": "Question",
+        "name": "모스 굳기계 표준 광물 경도 10",
+        "text": "천연 물질 중 모스 굳기계(경도)에서 가장 단단한 표준 10에 해당하는 광물은 무엇일까요?",
+        "suggestedAnswer": [
+          { "@type": "Answer", "text": "석영(쿼츠)", "position": 0 },
+          { "@type": "Answer", "text": "강옥(루비/사파이어)", "position": 1 },
+          { "@type": "Answer", "text": "금강석(다이아몬드)", "position": 2 },
+          { "@type": "Answer", "text": "황옥(토파즈)", "position": 3 }
+        ],
+        "acceptedAnswer": { "@type": "Answer", "text": "금강석(다이아몬드)", "position": 2 }
+      },
+      {
+        "@type": "Question",
+        "name": "지구상 최대 면적 사막",
+        "text": "지구상에서 '가장 넓은 면적'을 차지하는 사막은 어디일까요?",
+        "suggestedAnswer": [
+          { "@type": "Answer", "text": "사하라 사막", "position": 0 },
+          { "@type": "Answer", "text": "남극 사막", "position": 1 },
+          { "@type": "Answer", "text": "아라비아 사막", "position": 2 },
+          { "@type": "Answer", "text": "고비 사막", "position": 3 }
+        ],
+        "acceptedAnswer": { "@type": "Answer", "text": "남극 사막", "position": 1 }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <main class="container">
+    <header role="banner">
+      <div class="badge">notopened AI ENTERPRISE v1.1.0 RC</div>
+      <h1>1일 1상식 두뇌 퀴즈</h1>
+      <p>하루(Haru)의 퀴즈 쇼츠 연동 30초 스낵 퀴즈</p>
+    </header>
+
+    <!-- Top AdSense Placement Placeholder (Responsive 320x50 Banner Slot) -->
+    <aside class="ad-slot" aria-label="광고 영역">
+      <span>[Google AdSense Responsive Unit]</span>
+      <p>320x50 모바일 상단 배너 규격 (내부 테스트용)</p>
+    </aside>
+
+    <!-- Quiz Interactive Card -->
+    <section class="card" id="quizCard" aria-live="polite">
+      <div class="progress-bar" role="progressbar" aria-label="퀴즈 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="question-meta">
+        <span id="categoryText">카테고리 로딩 중...</span>
+        <span id="counterText">1 / 5</span>
+      </div>
+
+      <h2 class="question-text" id="questionText">
+        질문 로딩 중...
+      </h2>
+
+      <div class="options-grid" id="optionsGrid" role="group" aria-label="선택지 목록">
+        <!-- Option buttons dynamically generated by app.js -->
+      </div>
+
+      <div class="explanation-box" id="explanationBox" role="region" aria-label="정답 해설">
+        <strong id="expResult"></strong>: <span id="expText"></span>
+      </div>
+
+      <button class="next-btn" id="nextBtn" type="button">다음 문제로</button>
+    </section>
+
+    <!-- Result Screen Card -->
+    <section class="card result-screen" id="resultCard" aria-live="polite">
+      <div class="score-circle">
+        <div class="score-num" id="finalScore">0</div>
+        <div class="score-total">/ 5 점</div>
+      </div>
+
+      <h2 class="rank-title" id="rankTitle">두뇌 등급 산출 중</h2>
+      <p class="rank-desc" id="rankDesc">퀴즈 풀이 결과 분석 완료</p>
+
+      <button class="share-btn" id="shareBtn" type="button">📋 결과 복사 / 공유하기</button>
+      <button class="next-btn" id="nextSetBtn" style="display:block; margin-top:8px;" type="button">⚡ 다음 5문항 세트 도전 (총 30문항 DB)</button>
+      <button class="next-btn" id="restartBtn" style="display:block; margin-top:8px;" type="button">🔄 현재 세트 다시 도전하기</button>
+
+      <!-- Cross Promotion Section -->
+      <nav class="cross-promo" aria-label="notopened 패밀리 게임 링크">
+        <h3>🎮 notopened 패밀리 게임 바로가기</h3>
+        
+        <div class="game-card">
+          <div class="game-info">
+            <h4>GAME #001: 레트로 아케이드</h4>
+            <p>손끝 순발력과 두뇌 회전이 만나는 1분 상식 서바이벌 (개발: 린샤오)</p>
+          </div>
+          <button class="game-link-btn" type="button" data-game="001">체험하기</button>
+        </div>
+
+        <div class="game-card">
+          <div class="game-info">
+            <h4>GAME #002: Word Match</h4>
+            <p>기어와 중력 장치를 조작해 정답 게이트를 여는 두뇌 물리 퍼즐 Quiz Machine (개발: 노아)</p>
+          </div>
+          <button class="game-link-btn" type="button" data-game="002">체험하기</button>
+        </div>
+
+        <div class="game-card">
+          <div class="game-info">
+            <h4>GAME #003: Knot Flow</h4>
+            <p>얽힌 양자 매듭을 푸는 두뇌 힐링 라인 퍼즐 Knot Flow (개발: 루카)</p>
+          </div>
+          <button class="game-link-btn" type="button" data-game="003">체험하기</button>
+        </div>
+      </nav>
+    </section>
+
+    <!-- Bottom AdSense Placement Placeholder (300x250 Content Rectangle Slot) -->
+    <aside class="ad-slot" aria-label="광고 영역" style="margin-top: 8px;">
+      <span>[Google AdSense Responsive Unit]</span>
+      <p>300x250 콘텐츠 하단 사각 배너 규격 (내부 테스트용)</p>
+    </aside>
+
+    <!-- Footer with Policy Links and Governance info -->
+    <footer class="portal-footer">
+      <div class="footer-links">
+        <a href="./privacy.html" class="footer-link">개인정보처리방침</a>
+        <span>&bull;</span>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      </div>
+      <p>&copy; 2026 notopened AI ENTERPRISE. All rights reserved.</p>
+      <p style="font-size: 0.7rem; color: #64748b;">신규사업개발실 웹 퀴즈 포털 v1.1.0 RC (비공개 검증 버전)</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="alert" aria-live="assertive">결과가 클립보드에 복사되었습니다!</div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

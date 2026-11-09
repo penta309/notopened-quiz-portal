@@ -1,0 +1,15 @@
+=== notopened AI ENTERPRISE Daily Automated Inspection ===
+Execution ID : CHK-20261108-000907
+Execution Time: 2026-11-08 00:09:07 KST
+Environment   : Headless Chromium (Linux x86_64) / Python 3.11
+===========================================================
+[PASS] Syntax check: test_quiz_logic.py
+[PASS] Syntax check: test_browser_flow.py
+[PASS] Syntax check: test_schema.py
+[PASS] Syntax check: haru_sync.py
+[PASS] 6/6 Unit tests passed (0.04s)
+[PASS] 3/3 Haru samples schema validated (0.02s)
+[PASS] 23/23 Browser E2E tests passed on Desktop & Mobile (16.37s)
+===========================================================
+Inspection Summary: Total 36 | Passed 36 | Failed 0 | Pass Rate 100.0%
+Automation Status : LOCAL_VERIFIED (Cron/Actions DISCONNECTED due to sandbox network policy)
