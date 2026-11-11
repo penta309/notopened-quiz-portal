@@ -9,7 +9,7 @@ export const quizData = [
     question: "비행기 객실 창문 아래쪽에 뚫려 있는 아주 작은 구멍은 창문이 깨졌을 때 바로 추락하는 것을 방지하기 위한 기압 조절용이다?",
     options: ["O (그렇다)", "X (아니다)"],
     answer: 0,
-    explanation: "맞습니다! '블리드 홀(Bleed Hole)'이라고 불리며 객실과 외부의 엄청난 기압 차이를 조절하고 창문에 김이 서리는 것을 방지합니다.",
+    explanation: "정답은 O입니다. '블리드 홀(Bleed Hole)'이라고 불리며 객실과 외부의 엄청난 기압 차이를 조절하고 창문에 김이 서리는 것을 방지합니다.",
     source: "Federal Aviation Administration (FAA) Aircraft Cabin Safety Standards"
   },
   {
@@ -27,7 +27,7 @@ export const quizData = [
     question: "조선시대 왕들의 일거수일투족을 기록했던 사관들의 사초(史草)는 국왕이라도 절대 열람할 수 없었다?",
     options: ["O (국왕도 볼 수 없었다)", "X (국왕은 언제든 열람 가능했다)"],
     answer: 0,
-    explanation: "맞습니다! 사관의 독립성과 기록의 객관성을 보장하기 위해 국왕조차 사초를 읽는 것이 엄격히 금지되었습니다 (태종 실록의 일화가 대표적).",
+    explanation: "정답은 O입니다. 사관의 독립성과 기록의 객관성을 보장하기 위해 국왕조차 사초를 읽는 것이 엄격히 금지되었습니다 (태종 실록의 일화가 대표적).",
     source: "국사편찬위원회 조선왕조실록 사초 열람 금지 원칙"
   },
   {
@@ -108,7 +108,7 @@ export const quizData = [
     question: "전자레인지에 알루미늄 포일이나 금속 숟가락을 넣고 돌리면 불꽃(스파크)이 튀며 화재 위험이 발생할 수 있다?",
     options: ["O (절대 넣으면 안 된다)", "X (아무 문제 없다)"],
     answer: 0,
-    explanation: "맞습니다! 마이크로파가 금속 표면의 자유전자를 급격히 진동시키고 뾰족한 모서리에 전하가 집중되면서 아크 방전(스파크)이 발생합니다.",
+    explanation: "정답은 O입니다. 마이크로파가 금속 표면의 자유전자를 급격히 진동시키고 뾰족한 모서리에 전하가 집중되면서 아크 방전(스파크)이 발생합니다.",
     source: "식품의약품안전처 전자레인지 안전 사용 가이드"
   },
   {
@@ -180,7 +180,7 @@ export const quizData = [
     question: "공작새 수컷의 화려한 청록색 깃털은 실제 색소 때문이 아니라 나노 구조가 빛을 반사하는 '구조색(Structural Color)' 때문이다?",
     options: ["O (빛의 간섭에 의한 구조색이다)", "X (파란색 물감 색소가 들어있다)"],
     answer: 0,
-    explanation: "맞습니다! 공작 깃털 자체의 색소는 갈색에 가깝지만, 미세한 격자 구조가 특정 파장의 빛만 반사·간섭시켜 보는 각도에 따라 영롱한 빛깔을 냅니다.",
+    explanation: "정답은 O입니다. 공작 깃털 자체의 색소는 갈색에 가깝지만, 미세한 격자 구조가 특정 파장의 빛만 반사·간섭시켜 보는 각도에 따라 영롱한 빛깔을 냅니다.",
     source: "Proceedings of the National Academy of Sciences: Structural Color in Peacock Feathers"
   },
   {
@@ -243,7 +243,7 @@ export const quizData = [
     question: "우주 공간에서는 거대한 폭발이 일어나도 우리 귀에 아무런 소리가 들리지 않는다?",
     options: ["O (진공 상태라 소리가 전달되지 않는다)", "X (지구보다 훨씬 크게 들린다)"],
     answer: 0,
-    explanation: "맞습니다! 소리(음파)는 공기나 물 같은 매질의 진동을 통해 전달되는 역학적 파동이므로, 매질이 거의 없는 우주 진공에서는 소리가 퍼져나갈 수 없습니다.",
+    explanation: "정답은 O입니다. 소리(음파)는 공기나 물 같은 매질의 진동을 통해 전달되는 역학적 파동이므로, 매질이 거의 없는 우주 진공에서는 소리가 퍼져나갈 수 없습니다.",
     source: "NASA Space Place: Sound in Space"
   },
   {

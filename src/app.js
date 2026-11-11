@@ -202,13 +202,13 @@ function handleGamePromo(e) {
   if (!btn) return;
   const gameId = btn.getAttribute('data-game');
   if (gameId === '001') {
-    showToast("GAME #001 (린샤오 | 손끝의 순발력과 두뇌 회전이 만나는 1분 상식 서바이벌) 출시 준비 중!");
+    showToast("GAME #001 '네온 퀴즈 러시 (Neon Quiz Rush)' — Google Play 스토어 출시 예정입니다!");
   } else if (gameId === '002') {
-    showToast("GAME #002 (노아 | 하루 5분, 어휘력과 추리력을 깨우는 감성 워드 퍼즐) 출시 준비 중!");
+    showToast("GAME #002 '퀴즈 머신 (Quiz Machine)' — Google Play 스토어 출시 예정입니다!");
   } else if (gameId === '003') {
-    showToast("GAME #003 (루카 | 양자 매듭 두뇌 힐링 라인 퍼즐 Knot Flow v1.2.2) QA 통과 완료!");
+    showToast("GAME #003 '낫 플로우 (Knot Flow)' — Google Play 스토어 출시 예정입니다!");
   } else {
-    showToast("패밀리 게임 출시 준비 중입니다.");
+    showToast("notopened 패밀리 게임 스토어 출시 예정입니다!");
   }
 }
 
