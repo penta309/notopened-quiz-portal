@@ -1,3 +1,4 @@
+const CANONICAL_SHARE_URL = 'https://penta309.github.io/notopened-quiz-portal/';
 import { quizData } from './data.js';
 import { initTouchInteractions } from './touchHandler.js';
 
@@ -146,14 +147,15 @@ export function nextRoundSet() {
 export async function shareResult() {
   const rankTitleElem = document.getElementById('rankTitle');
   const rank = rankTitleElem ? rankTitleElem.textContent : "상식 퀴즈 도전자";
-  const shareText = `[notopened 상식 퀴즈] 5문제 중 ${score}문제를 맞췄습니다!\n나의 등급: ${rank}\n지금 바로 도전해보세요! #notopened #상식퀴즈`;
+  const shareUrl = CANONICAL_SHARE_URL;
+  const shareText = `[notopened 상식 퀴즈] 5문제 중 ${score}문제를 맞췄습니다!\n나의 등급: ${rank}\n도전하기 👉 ${shareUrl}\n#notopened #상식퀴즈`;
   
   if (navigator.share) {
     try {
       await navigator.share({
         title: 'notopened 1일 1상식 두뇌 퀴즈',
         text: shareText,
-        url: window.location.href
+        url: shareUrl
       });
       showToast("공유되었습니다!");
       return;
@@ -176,11 +178,19 @@ export async function shareResult() {
 function fallbackCopyText(text) {
   const textArea = document.createElement("textarea");
   textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.top = "0";
+  textArea.style.left = "0";
   document.body.appendChild(textArea);
+  textArea.focus();
   textArea.select();
   try {
-    document.execCommand('copy');
-    showToast("결과가 클립보드에 복사되었습니다!");
+    const successful = document.execCommand('copy');
+    if (successful) {
+      showToast("결과가 클립보드에 복사되었습니다!");
+    } else {
+      showToast("클립보드 복사에 실패했습니다. 주소창 URL을 직접 공유해주세요.");
+    }
   } catch (err) {
     showToast("클립보드 복사 권한이 필요합니다.");
   }
