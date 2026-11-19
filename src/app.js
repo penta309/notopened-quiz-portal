@@ -1,4 +1,11 @@
 const CANONICAL_SHARE_URL = 'https://penta309.github.io/notopened-quiz-portal/';
+
+// Post-launch store URLs (set to null while pre-launch per BIZ-FOCUS policy)
+export const GAME_STORE_LINKS = Object.freeze({
+  '001': null,
+  '002': null,
+  '003': null
+});
 import { quizData } from './data.js';
 import { initTouchInteractions } from './touchHandler.js';
 
@@ -148,13 +155,14 @@ export async function shareResult() {
   const rankTitleElem = document.getElementById('rankTitle');
   const rank = rankTitleElem ? rankTitleElem.textContent : "상식 퀴즈 도전자";
   const shareUrl = CANONICAL_SHARE_URL;
-  const shareText = `[notopened 상식 퀴즈] 5문제 중 ${score}문제를 맞췄습니다!\n나의 등급: ${rank}\n도전하기 👉 ${shareUrl}\n#notopened #상식퀴즈`;
+  const nativeShareText = `[notopened 상식 퀴즈] 5문제 중 ${score}문제를 맞췄습니다!\n나의 등급: ${rank}\n지금 바로 도전해보세요! #notopened #상식퀴즈`;
+  const clipboardShareText = `[notopened 상식 퀴즈] 5문제 중 ${score}문제를 맞췄습니다!\n나의 등급: ${rank}\n도전하기 👉 ${shareUrl}\n#notopened #상식퀴즈`;
   
   if (navigator.share) {
     try {
       await navigator.share({
         title: 'notopened 1일 1상식 두뇌 퀴즈',
-        text: shareText,
+        text: nativeShareText,
         url: shareUrl
       });
       showToast("공유되었습니다!");
@@ -165,13 +173,13 @@ export async function shareResult() {
   }
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(shareText).then(() => {
+    navigator.clipboard.writeText(clipboardShareText).then(() => {
       showToast("결과가 클립보드에 복사되었습니다!");
     }).catch(() => {
-      fallbackCopyText(shareText);
+      fallbackCopyText(clipboardShareText);
     });
   } else {
-    fallbackCopyText(shareText);
+    fallbackCopyText(clipboardShareText);
   }
 }
 
@@ -211,6 +219,11 @@ function handleGamePromo(e) {
   const btn = e.target.closest('.game-link-btn');
   if (!btn) return;
   const gameId = btn.getAttribute('data-game');
+  const storeUrl = GAME_STORE_LINKS[gameId];
+  if (storeUrl) {
+    window.open(storeUrl, '_blank', 'noopener,noreferrer');
+    return;
+  }
   if (gameId === '001') {
     showToast("GAME #001 '네온 퀴즈 러시 (Neon Quiz Rush)' — Google Play 스토어 출시 예정입니다!");
   } else if (gameId === '002') {
